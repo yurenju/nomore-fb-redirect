@@ -2,8 +2,8 @@
   "name": "flink-removal",
   "title": "flink-removal",
   "id": "jid1-dttt63N5KadthA",
-  "description": "a basic add-on",
+  "description": "Prevent redirect to facebook.com/l.php to waste your time",
   "author": "",
   "license": "MPL 2.0",
-  "version": "0.1"
+  "version": "0.2"
 }
