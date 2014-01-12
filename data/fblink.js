@@ -1,7 +1,6 @@
 const RE_REDIRECT = new RegExp('[?|&]u=([^&;]+?)(&|#|;|$)');
 
-MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-var observer = new MutationObserver(function(mutations, observer) {
+function removeRedirect() {
   var links = (!navigator.userAgent.contains('Mobile'))
     ? document.querySelectorAll('a[rel=nofollow]')
     : document.querySelectorAll('a[target=_blank]');
@@ -17,7 +16,11 @@ var observer = new MutationObserver(function(mutations, observer) {
       link.href = decodeURIComponent(matched[1]);
     }
   });
-});
+}
+
+MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+var observer = new MutationObserver(removeRedirect);
+removeRedirect();
 
 observer.observe(document, {
   subtree: true,
