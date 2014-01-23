@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "flink-removal",
+  "version": "1.0",
+
+  "description": "Prevent redirect to facebook.com/l.php to waste your time",
+
+  "author": ["Shen-Ta Hsieh", "Yuren Ju"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://facebook.com/*",
+        "https://m.facebook.com/*"
+      ],
+      "js": ["data/fblink.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
